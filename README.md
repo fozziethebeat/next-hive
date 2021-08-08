@@ -1,4 +1,4 @@
-[![Continuous Integration](https://github.com/fozziethebeat/next-hive/workflows/integration/badge.svg)](https://github.com/fozziethebeat/next-hive/actions)
+![Continuous Integration](https://github.com/fozziethebeat/next-hive/actions/workflows/integration.yaml/badge.svg)
 
 ## Getting Started
 
