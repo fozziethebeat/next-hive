@@ -1,8 +1,14 @@
+/***
+ * Defines a crowdsourcing Project.
+ */
 export interface Project {
+  /**
+   * The client name for the project.
+   */
   name: string;
 }
 
-interface ProjectChild {
+export interface ProjectChild {
   id?: string;
   project?: string;
 }

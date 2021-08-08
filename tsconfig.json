@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -13,13 +12,16 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "paths": {
-      "@/lib/*": ["lib/*"],
-      "@/pages/*": ["pages/*"]
-      "@/types/*": ["types/*"]
-    }
+    "jsx": "preserve"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "typedocOptions": {
+    "entryPoints": [
+      "lib",
+      "pages",
+      "types"
+    ],
+    "out": "docs"
+  }
 }

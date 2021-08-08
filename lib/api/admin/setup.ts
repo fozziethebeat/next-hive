@@ -2,14 +2,34 @@ import { v4 as uuidv4 } from "uuid";
 
 import { Client } from "@elastic/elasticsearch";
 
-import type { Project, Task, Asset } from "@types";
+import type { Project, Task, Asset } from "../../../types";
 
+/**
+ * Defines the HTTP body format for the setup handler.
+ */
 export interface SetupBody {
+  /**
+   * Specifies a single project.
+   */
   project: Project;
+  /**
+   * Specifies one or more {@type Task}s within the `project`.
+   */
   tasks: Task[];
+  /**
+   * Specifies one or more {@type Asset}s within the `project`.
+   */
   assets: Asset[];
 }
 
+/**
+ * Creates the required indices and bulk uploads all content within the
+ * `setupBody`.  Returns a status HTTP code and message field.
+ *
+ * @param client The Elasticsearch client.
+ * @param setupBody The body message for the admin setup call.
+ * @returns An object with `status` and `message` fields.
+ */
 export async function handlerImpl(client: Client, setupBody: SetupBody) {
   const indices = [
     `${process.env.ELASTIC_INDEX}-projects`,
@@ -19,12 +39,14 @@ export async function handlerImpl(client: Client, setupBody: SetupBody) {
   ];
 
   // Check if the index already exists.  End early if it does.
-  const allIndicesExist = await indices.reduce(async (exists, index) => {
+  let allIndicesExist = true;
+  for (const index of indices) {
     const existResult = await client.indices.exists({
       index: index,
     });
-    return exists && existResult.body;
-  }, true);
+    allIndicesExist = allIndicesExist && existResult.body;
+  }
+
   if (allIndicesExist) {
     return { status: 200, message: "Indices Already Created" };
   }
