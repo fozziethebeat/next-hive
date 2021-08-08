@@ -58,33 +58,45 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p>This is a <a href="https://nextjs.org/">Next.js</a> project bootstrapped with <a href="https://github.com/vercel/next.js/tree/canary/packages/create-next-app"><code>create-next-app</code></a>.</p>
+				<p><a href="https://github.com/fozziethebeat/next-hive/actions"><img src="https://github.com/fozziethebeat/next-hive/actions/workflows/integration.yaml/badge.svg" alt="Continuous Integration"></a></p>
+				<a href="#about" id="about" style="color: inherit; text-decoration: none;">
+					<h2>About</h2>
+				</a>
+				<p>This package is an attempt to rewrite the <a href="https://github.com/nytlabs/hive">Hive Crowdsourcing</a> platform.  This makes a suite of useful changes:</p>
+				<ul>
+					<li>Updates to use Elastic Search 7.x rather than 1.x</li>
+					<li>Runs in Node JS (using <a href="https://nextjs.org/">Next.JS</a>) rather than Go.</li>
+					<li>Breaks the implementation into serverless methods that are hopefully easier to run and manage.</li>
+					<li>Adds unittesting and continuous integration.</li>
+					<li>Includes more refined documentation of the API and libraries.</li>
+				</ul>
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
 					<h2>Getting Started</h2>
 				</a>
-				<p>First, run the development server:</p>
-				<pre><code class="language-bash"><span style="color: #000000">npm run dev</span>
-<span style="color: #008000"># or</span>
-<span style="color: #000000">yarn dev</span>
+				<p>NOTE: This guide covers just local developing on a sandbox.  Later, we&#39;ll write
+				how to setup a real environment.</p>
+				<p>First, as a pre-setup, you&#39;ll need a local ElasticSearch service.  We recommend
+				using ElasticSearch&#39;s docker setup:</p>
+				<pre><code class="language-bash"><span style="color: #000000">docker run -p 9200:9200 -p 9300:9300 \</span>
+<span style="color: #000000">  -e </span><span style="color: #A31515">&quot;discovery.type=single-node&quot;</span><span style="color: #000000"> \</span>
+<span style="color: #000000">  docker.elastic.co/elasticsearch/elasticsearch:7.13.4</span>
 </code></pre>
-				<p>Open <a href="http://localhost:3000">http://localhost:3000</a> with your browser to see the result.</p>
-				<p>You can start editing the page by modifying <code>pages/index.tsx</code>. The page auto-updates as you edit the file.</p>
-				<p><a href="https://nextjs.org/docs/api-routes/introduction">API routes</a> can be accessed on <a href="http://localhost:3000/api/hello">http://localhost:3000/api/hello</a>. This endpoint can be edited in <code>pages/api/hello.tsx</code>.</p>
-				<p>The <code>pages/api</code> directory is mapped to <code>/api/*</code>. Files in this directory are treated as <a href="https://nextjs.org/docs/api-routes/introduction">API routes</a> instead of React pages.</p>
-				<a href="#learn-more" id="learn-more" style="color: inherit; text-decoration: none;">
-					<h2>Learn More</h2>
+				<p>Next, run a local instance and poke around at it:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm run dev</span>
+</code></pre>
+				<p>Open <a href="http://localhost:3000">http://localhost:3000</a> and test the various endpoints.</p>
+				<a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
+					<h3>Testing</h3>
 				</a>
-				<p>To learn more about Next.js, take a look at the following resources:</p>
-				<ul>
-					<li><a href="https://nextjs.org/docs">Next.js Documentation</a> - learn about Next.js features and API.</li>
-					<li><a href="https://nextjs.org/learn">Learn Next.js</a> - an interactive Next.js tutorial.</li>
-				</ul>
-				<p>You can check out <a href="https://github.com/vercel/next.js/">the Next.js GitHub repository</a> - your feedback and contributions are welcome!</p>
-				<a href="#deploy-on-vercel" id="deploy-on-vercel" style="color: inherit; text-decoration: none;">
-					<h2>Deploy on Vercel</h2>
+				<p>We&#39;ve setup unittesting with <a href="https://jestjs.io/">Jest</a>:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm run </span><span style="color: #795E26">test</span>
+</code></pre>
+				<a href="#re-creating-documentation" id="re-creating-documentation" style="color: inherit; text-decoration: none;">
+					<h3>Re-creating documentation</h3>
 				</a>
-				<p>The easiest way to deploy your Next.js app is to use the <a href="https://vercel.com/new?utm_medium=default-template&amp;filter=next.js&amp;utm_source=create-next-app&amp;utm_campaign=create-next-app-readme">Vercel Platform</a> from the creators of Next.js.</p>
-				<p>Check out our <a href="https://nextjs.org/docs/deployment">Next.js deployment documentation</a> for more details.</p>
+				<p>We use <a href="https://typedoc.org/">TypeDoc</a> to auto-generate documentation:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm run doc</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

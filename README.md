@@ -1,34 +1,49 @@
 [![Continuous Integration](https://github.com/fozziethebeat/next-hive/actions/workflows/integration.yaml/badge.svg)](https://github.com/fozziethebeat/next-hive/actions)
 
+## About
+
+This package is an attempt to rewrite the [Hive Crowdsourcing](https://github.com/nytlabs/hive) platform.  This makes a suite of useful changes:
+
+  - Updates to use Elastic Search 7.x rather than 1.x
+  - Runs in Node JS (using [Next.JS](https://nextjs.org/)) rather than Go.
+  - Breaks the implementation into serverless methods that are hopefully easier to run and manage.
+  - Adds unittesting and continuous integration.
+  - Includes more refined documentation of the API and libraries.
+
 ## Getting Started
 
-First, run the development server:
+NOTE: This guide covers just local developing on a sandbox.  Later, we'll write
+how to setup a real environment.
+
+First, as a pre-setup, you'll need a local ElasticSearch service.  We recommend
+using ElasticSearch's docker setup:
+
+```bash
+docker run -p 9200:9200 -p 9300:9300 \
+  -e "discovery.type=single-node" \
+  docker.elastic.co/elasticsearch/elasticsearch:7.13.4
+```
+
+Next, run a local instance and poke around at it:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) and test the various endpoints.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Testing
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+We've setup unittesting with [Jest](https://jestjs.io/):
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run test
+```
 
-## Learn More
+### Re-creating documentation
 
-To learn more about Next.js, take a look at the following resources:
+We use [TypeDoc](https://typedoc.org/) to auto-generate documentation:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run doc
+```
