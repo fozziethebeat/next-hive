@@ -47,3 +47,10 @@ We use [TypeDoc](https://typedoc.org/) to auto-generate documentation:
 ```bash
 npm run doc
 ```
+
+## Conversion Status
+
+| Path | Status |
+| ---- | ------ |
+| `/admin/setup`| :white_check_mark: |
+| `/admin/projects` | :x: |
