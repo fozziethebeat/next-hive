@@ -52,24 +52,24 @@ npm run doc
 
 | Path | Implementation | Testing | Documentation |
 | ---- | ------ | ------ | ----- |
-| `/admin/setup`| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| `/admin/projects` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}/assets` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}/assignments` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}/tasks` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}/tasks/{task_id}` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}/tasks/{task_id}/complete` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}/users` | :x: | :x: | :x: |
-| `/admin/projects/{project_id}/users{user_id}` | :x: | :x: | :x: |
-| `/projects/{project_id}` | :x: | :x: | :x: |
-| `/projects/{project_id}/assets/{asset_id}` | :x: | :x: | :x: |
-| `/projects/{project_id}/assets/{asset_id}/favorite` | :x: | :x: | :x: |
-| `/projects/{project_id}/assignments/{assignment}` | :x: | :x: | :x: |
-| `/projects/{project_id}/tasks` | :x: | :x: | :x: |
-| `/projects/{project_id}/tasks/{task_id}` | :x: | :x: | :x: |
-| `/projects/{project_id}/tasks/{task_id}/assets/{asset_id}/assignments` | :x: | :x: | :x: |
-| `/projects/{project_id}/tasks/{task_id}/assignments` | :x: | :x: | :x: |
-| `/projects/{project_id}/user` | :x: | :x: | :x: |
-| `/projects/{project_id}/user/external` | :x: | :x: | :x: |
-| `/projects/{project_id}/user/favorites` | :x: | :x: | :x: |
+| `/admin/setup`| ✅ | ✅ | ✅ |
+| `/admin/projects` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}/assets` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}/assignments` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}/tasks` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}/tasks/{task_id}` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}/tasks/{task_id}/complete` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}/users` | ❌ | ❌ | ❌ |
+| `/admin/projects/{project_id}/users{user_id}` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/assets/{asset_id}` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/assets/{asset_id}/favorite` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/assignments/{assignment}` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/tasks` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/tasks/{task_id}` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/tasks/{task_id}/assets/{asset_id}/assignments` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/tasks/{task_id}/assignments` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/user` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/user/external` | ❌ | ❌ | ❌ |
+| `/projects/{project_id}/user/favorites` | ❌ | ❌ | ❌ |
