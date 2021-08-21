@@ -53,8 +53,8 @@ npm run doc
 | Path | Implementation | Testing | Documentation |
 | ---- | ------ | ------ | ----- |
 | `/admin/setup`| ✅ | ✅ | ✅ |
-| `/admin/projects` | ❌ | ❌ | ❌ |
-| `/admin/projects/{project_id}` | ❌ | ❌ | ❌ |
+| `/admin/projects` | ✅ | ✅ | ✅ |
+| `/admin/projects/{project_id}` | ✅ | ✅ | ✅ |
 | `/admin/projects/{project_id}/assets` | ❌ | ❌ | ❌ |
 | `/admin/projects/{project_id}/assignments` | ❌ | ❌ | ❌ |
 | `/admin/projects/{project_id}/tasks` | ❌ | ❌ | ❌ |
