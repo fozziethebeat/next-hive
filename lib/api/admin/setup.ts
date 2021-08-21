@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { Client } from "@elastic/elasticsearch";
 
-import type { Project, Task, Asset } from "../../../types";
+import type { Project, Task, Asset } from "types";
 
 /**
  * Defines the HTTP body format for the setup handler.

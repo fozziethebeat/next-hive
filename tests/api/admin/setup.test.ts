@@ -1,8 +1,8 @@
 import { Client } from "@elastic/elasticsearch";
 import Mock from "@elastic/elasticsearch-mock";
 
-import { handlerImpl, SetupBody } from "../../../lib/api/admin/setup";
-import type { Project, ProjectChild, Task, Asset } from "../../../types";
+import { handlerImpl, SetupBody } from "@lib/api/admin/setup";
+import type { Project, ProjectChild, Task, Asset } from "types";
 
 test("adminSetupNewIndex", async () => {
   process.env.ELASTIC_INDEX = "hive-test";
